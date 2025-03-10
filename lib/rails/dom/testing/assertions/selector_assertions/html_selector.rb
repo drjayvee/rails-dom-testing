@@ -18,7 +18,6 @@ module Rails
               @values = values
               @root = extract_root(previous_selection, root_fallback)
               extract_selectors
-              @strict = false
               @tests = extract_equality_tests(refute)
               @message = @values.shift
 
@@ -52,15 +51,16 @@ module Rails
 
                 content_mismatch = nil
                 text_matches = tests.has_key?(:text)
+                html_matches = tests.has_key?(:html)
                 regex_matching = match_with.is_a?(Regexp)
 
                 remaining = matches.reject do |match|
                   # Preserve markup with to_s for html elements
-                  content = text_matches ? match.text : match.children.to_s
+                  content = text_matches ? match.text : match.inner_html
 
                   content.strip! unless NO_STRIP.include?(match.name)
                   content.delete_prefix!("\n") if text_matches && match.name == "textarea"
-                  collapse_html_whitespace!(content) unless NO_STRIP.include?(match.name) || @strict
+                  collapse_html_whitespace!(content) unless NO_STRIP.include?(match.name) || html_matches
 
                   next if regex_matching ? (content =~ match_with) : (content == match_with)
                   content_mismatch ||= diff(match_with, content)
