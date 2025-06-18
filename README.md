@@ -77,8 +77,8 @@ Or install it yourself as:
 ## Read more
 
 Under the hood the doms are parsed with Nokogiri, and you'll generally be working with these two classes:
-- [`Nokogiri::XML::Node`](http://www.rubydoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/Node)
-- [`Nokogiri::XML::NodeSet`](http://www.rubydoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/NodeSet)
+- [`Nokogiri::XML::Node`](https://nokogiri.org/rdoc/Nokogiri/XML/Node)
+- [`Nokogiri::XML::NodeSet`](https://nokogiri.org/rdoc/Nokogiri/XML/NodeSet)
 
 Read more about Nokogiri:
 - [Nokogiri](http://nokogiri.org)
