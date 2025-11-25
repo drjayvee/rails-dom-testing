@@ -100,10 +100,10 @@ module Rails
           # Substitution uses a custom pseudo class match. Pass in whatever attribute you want to match (enclosed in quotes) and a ? for the substitution.
           # assert_dom returns nil if called with an invalid css selector.
           #
-          # assert_dom "div:match('id', ?)", "id_string"
-          # assert_dom "div:match('id', ?)", :id_string
-          # assert_dom "div:match('id', ?)", 1
-          # assert_dom "div:match('id', ?)", /\d+/
+          #  assert_dom "div:match('id', ?)", "id_string"
+          #  assert_dom "div:match('id', ?)", :id_string
+          #  assert_dom "div:match('id', ?)", 1
+          #  assert_dom "div:match('id', ?)", /\d+/
           #
           # === Equality Tests
           #
