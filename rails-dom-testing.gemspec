@@ -16,7 +16,6 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.5.0"
 
   spec.files         = Dir["lib/**/*", "README.md", "MIT-LICENSE", "CHANGELOG.md"]
-  spec.test_files    = Dir["test/**/*"]
   spec.require_paths = ["lib"]
 
   spec.add_dependency "activesupport",  ">= 5.0.0"
